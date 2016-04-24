@@ -6,7 +6,7 @@ default[:altcointip][:python_pips] = ['praw', 'sqlalchemy', 'mysql-python', 'pyy
 # Git information
 
 default[:altcointip][:git_repos] = {
-  'altcointip' => 'https://github.com/vindimy/altcointip.git',
+  'altcointip' => 'https://github.com/losh11/altcointip.git',
   'pifkoin' => 'https://github.com/vindimy/pifkoin.git',
   'pyvircurex' => 'https://github.com/vindimy/pyvircurex.git'
 }
@@ -41,7 +41,7 @@ default[:altcointip][:reddit_password] = 'myaltcointip123'
 
 default[:altcointip][:cron] = {
   'stats' => {
-    :enabled => false,
+    :enabled => true,
     :minute => '0',
     :hour => '*/3',
     :day => '*',
@@ -50,7 +50,7 @@ default[:altcointip][:cron] = {
     :command => "cd #{node[:altcointip][:install_dir]}/altcointip/src && python _update_stats.py"
   },
   'backup_db' => {
-    :enabled => false,
+    :enabled => true,
     :minute => '0',
     :hour => '8,20',
     :day => '*',
@@ -59,7 +59,7 @@ default[:altcointip][:cron] = {
     :command => "cd #{node[:altcointip][:install_dir]}/altcointip/src && python _backup_db.py ~/backups"
   },
   'backup_wallets' => {
-    :enabled => false,
+    :enabled => true,
     :minute => '0',
     :hour => '9,21',
     :day => '*',
@@ -69,7 +69,7 @@ default[:altcointip][:cron] = {
     :command => "cd #{node[:altcointip][:install_dir]}/altcointip/src && python _backup_wallets.py ~/backups"
   },
   'backup_config' => {
-    :enabled => false,
+    :enabled => true,
     :minute => '0',
     :hour => '10',
     :day => '*',
