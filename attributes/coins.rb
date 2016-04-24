@@ -19,20 +19,20 @@ default[:altcointip][:cryptocoins] = {
     :port => 18333
   },
   :litecoin => {
-    :enabled => false,
+    :enabled => true,
     :name => 'litecoin',
-    :executable => 'litecoind',
+    :executable => 'litecoin-cli',
     :autostart => false,
     :method => 'git',
     :git_repo => 'https://github.com/litecoin-project/litecoin.git',
-    :git_revision => 'v0.8.7.2',
-    :file_name => 'litecoin-0.8.7.2-linux.tar.xz',
-    :file_source_url => 'https://litecoin.org/downloads/linux/litecoin-0.8.7.2-linux.tar.xz',
+    :git_revision => 'v0.10.4.0',
+    :file_name => 'litecoin-0.10.4.0-linux64.tar.gz',
+    :file_source_url => 'https://download.litecoin.org/litecoin-0.10.4.0/linux/litecoin-0.10.4.0-linux64.tar.gz',
     :file_sha256sum => '',
-    :file_extract_cmd => 'tar --strip-components=1 -Jxf',
-    :file_daemon_path => 'bin/64/litecoind',
-    :rpcport => 19332,
-    :port => 19333
+    :file_extract_cmd => 'tar --strip-components=1 -zxvf',
+    :file_daemon_path => 'bin/litecoin-cli',
+    :rpcport => 9332,
+    :port => 9333
   },
   :ppcoin => {
     :enabled => false,
